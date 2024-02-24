@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<!-- 1. Создать кнопку "Перевернуть". При клике на кнопку текст кнопки должен перевернуться и отобразиться в обратном порядке.
+2. Есть список элементов. Пользователь может добавлять новые элементы списка с текстом “Новый элемент списка” нажав на кнопку "Добавить".
+3. *Дополнительное задание: При клике на элемент списка он должен быть удален. (по желанию) -->
+
+<body>
+  
+    <div id="app">
+        <button @click="reverseBtn">{{btn}}</button>
+        <ul>
+            <li v-for="item in items" :key="item.id" @click="removeItem(item.id)">
+              {{item.name}} 
+            </li>
+        </ul>
+        <button @click="addItem">Добавить</button>
+       
+    </div>
+    
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = {
+            data() {
+                return {
+                    btn:"Перевернуть",
+                    items: [
+                        { 
+                        id:1,
+                        name:'first'},
+                        { 
+                        id:2,
+                        name:'second'},
+                        { 
+                        id:3,
+                        name:'third'},
+                    ],
+                  
+                }
+            },
+            methods: {
+                reverseBtn(){
+                    this.btn=[...this.btn].reverse().join('');
+                },
+                addItem() {
+                    const newItem={
+                        id:this.items.length+1,
+                        name:"Новый элемент списка",
+                    };
+                    this.items.push(newItem);
+                    
+                },
+                removeItem(id) {
+                    
+                    this.items = this.items.filter(
+                        (item) =>item.id !== id
+                    );
+                },       
+            },
+        }
+    
+        Vue.createApp(app).mount("#app");
+       
+    </script>
+</body>
+</html>
