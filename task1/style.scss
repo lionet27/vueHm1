@@ -1,11 +1,6 @@
 $colorCount:#CDA274;
-
-// $colorHover:blue;
-// $colorHeaderFooter: #222224;
 $widthSite:1140px;
-// $colorText:#000;
-// $fontFamilySite:Lato;
-// $widthBurgerMenu:232px;
+
 @font-face {
     font-family: DM Serif Display;
     src:url("fonts/DMSerifDisplay-Regular.ttf");
@@ -34,15 +29,6 @@ a{
     color: inherit;
 }
 
-// summary{
-//     list-style: none;
-// }
-
-// .box-content {
-//     overflow: hidden;
-  
-// }
-
 .container {
     margin: 0 auto;
     max-width: $widthSite;
@@ -53,15 +39,12 @@ a{
     padding-right: calc(50% - $widthSite/2);
 }
 
-.header{
-    // @include flexSBcenter(none);
-    // display: flex;
+.header{ 
     margin-top: 44px;
     margin-bottom: 57px;
     &__flex{
         @include flexSBcenter(none);
     }
-
 
     &__left{
         display: flex;
@@ -116,9 +99,7 @@ a{
         left: 52px;
         top: 208px;
         width: 434px;
-        // display: flex;
-        // flex-direction: column;
-    }
+     }
     &__title{
         color: rgb(41, 47, 54);
         font-family: DM Serif Display;
@@ -271,7 +252,7 @@ a{
         font-size: 85px;
         font-weight: 400;
         line-height: 125%;
-        // letter-spacing: 2%;
+      
         padding-left: 29px;
     }
     &__name{
@@ -330,16 +311,12 @@ a{
        
 
         &__img{
-            // margin: 21px;
-            margin-bottom: 21px;
-            // max-width: 320px;
-            // box-sizing: content-box;
+           margin-bottom: 21px;
+            
         }
         &__imgChild{
-            // margin: 21px;
-            // margin-bottom: 21px;
-            max-width: 320px;
-            // box-sizing: content-box;
+           max-width: 320px;
+            
         }
 
         &__type{
